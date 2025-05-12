@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Therapy Platform Mockup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #c4e3d8 0%, #4a7b6b 100%);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3c977f;
+    }
+
+
+        .logo span {
+            color: #03040b;
+        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #faf7f7;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #479c86;
+    }
+
+    .login-btn {
+      background-color: #479c86;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #479c86;
+    }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h3, .info-card h3 {
+            color: #056055;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f8f9ff;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #8DD3C7;
+            color: #056055;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #056055;
+            color: white;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .info-item i {
+            color: #8DD3C7;
+            font-size: 20px;
+            width: 25px;
+        }
+        
+        .info-icon {
+            background-color: #e6f7f5;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8DD3C7;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #e6f7f5;
+            border-radius: 50%;
+            color: #8DD3C7;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #8DD3C7;
+            color: white;
+        }
+        
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 50px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .footer-column {
+      width: calc(25% - 20px);
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .social-link:hover {
+      background-color: #4a6fa5;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #999;
+    }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #056055;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .navigation {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+     <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Speech<span>Empow</span></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="speechTherapy.html">Therapists</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/login" class="login-btn">Log   Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+    
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <h1 class="page-title">Contact Us</h1>
+        
+        <div class="contact-content">
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" action="https://formspree.io/f/xgvklkvd" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="appointment">Schedule Appointment</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="support">Technical Support</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>123 Speech Avenue, Voice City, SC 45678</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p>contact@speechempow.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: How do I schedule a session?</div>
+                        <div class="faq-answer">A: You can schedule a session through our online booking system or by contacting us directly.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Q: Are your services covered by insurance?</div>
+                        <div class="faq-answer">A: Many insurance plans cover our services. Please contact your provider to verify coverage.</div>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/ZPYGgJy1C2pBjmTg8" class="map-link" target="_blank">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-container" id="map">
+            <!-- The map will be inserted here by the Google Maps API -->
+        </div>
+    </div>
+    
+   <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>SpeechEmpow</h3>
+          <p>Enhancing speech, empowering voices worldwide through accessible therapy.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="speechTherapy.html">Therapists</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="speechTherapy.html">Stuttering Therapy</a></li>
+            <li><a href="speechTherapy.html">Articulation Therapy</a></li>
+            <li><a href="speechTherapy.html">Voice Therapy</a></li>
+            <li><a href="speechTherapy.html">Language Development</a></li>
+            <li><a href="speechTherapy.html">Self-Help Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: info@speechempow.com</li>
+            <li>Phone: (123) 456-7890</li>
+            <li>Hours: Mon-Fri, 9am-5pm EST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; 2025 SpeechEmpow. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Google Maps API Script -->
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of your business
+            // Replace with your actual coordinates
+            const businessLocation = { Lat: 28.422963 ,Long: 77.306266 };
+            
+            // The map, centered at your business location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: businessLocation,
+                mapTypeControl: true,
+                streetViewControl: true,
+                zoomControl: true,
+                fullscreenControl: true
+            });
+            
+            // The marker, positioned at your business location
+            const marker = new google.maps.Marker({
+                position: businessLocation,
+                map: map,
+                title: "SpeechEmpow",
+                animation: google.maps.Animation.DROP
+            });
+            
+            // Info window content
+            const contentString = 
+                '<div style="max-width: 200px; padding: 10px;">' +
+                '<h3 style="color: #056055; margin-bottom: 5px;">SpeechEmpow</h3>' +
+                '<p style="margin-bottom: 5px;">123 Speech Avenue, Voice City, SC 45678</p>' +
+                '<p style="margin-bottom: 5px;">+1 (555) 123-4567</p>' +
+                '<a href="mailto:contact@speechempow.com" style="color: #056055;">contact@speechempow.com</a>' +
+                '</div>';
+                
+            // Info window for marker
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            
+            // Open info window when marker is clicked
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+            
+            // Open info window by default
+            infowindow.open(map, marker);
+        }
+        
+        // Success message for form submission
+        const form = document.getElementById('contactForm');
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const status = document.createElement('div');
+            status.style.marginTop = '20px';
+            form.appendChild(status);
+
+            const data = new FormData(event.target);
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                const result = await response.json();
+                if (response.ok) {
+                    status.innerHTML = '<p style="color: #056055; font-weight: bold;">Thank you for your message! We will get back to you soon.</p>';
+                    form.reset();
+                    // Remove the status message after 3 seconds
+                    setTimeout(() => {
+                        status.remove();
+                    }, 5000);
+                } else {
+                    status.innerHTML = '<p style="color: red;">Oops! There was a problem submitting your form.</p>';
+                }
+            } catch (error) {
+                status.innerHTML = '<p style="color: red;">Oops! There was a problem submitting your form.</p>';
+            }
+        }
+        
+        form.addEventListener('submit', handleSubmit);
+    </script>
+    
+    <!-- Load the Google Maps API -->
+    <script async defer
+        src="https://maps.app.goo.gl/ZPYGgJy1C2pBjmTg8">
+    </script>
+</body>
+</html>

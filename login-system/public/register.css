@@ -1,0 +1,199 @@
+/* new-register.css - For the registration page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.register {
+    width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease;
+}
+
+.register:hover {
+    transform: translateY(-5px);
+}
+
+.register h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box, 
+.input-box1, 
+.input-box2, 
+.input-box3, 
+.input-box4 {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.name1, 
+.name2 {
+    flex: 1;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.input-box1 input, 
+.input-box2 input, 
+.input-box4 input,
+.input-box3 .input {
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+input:focus, 
+select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder, 
+select::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-box3 .input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.input-box3 .input option {
+    background-color: #3a7bd5;
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #185a9d;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.login-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.login-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+    color: #f0f0f0;
+}
+
+/* Animation effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+    .register {
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .input-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .name1, .name2 {
+        width: 100%;
+    }
+}

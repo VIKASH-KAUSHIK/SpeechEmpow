@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Therapy Platform Mockup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #c4e3d8 0%, #4a7b6b 100%);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3c977f;
+    }
+
+
+        .logo span {
+            color: #03040b;
+        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #faf7f7;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #479c86;
+    }
+
+    .login-btn {
+      background-color: #479c86;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #479c86;
+    }
+    .hero {
+      background-color: #f0f7ff;
+      padding: 60px 5%;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+    
+    .directory-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 5%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .filter-sidebar {
+      flex: 1;
+      min-width: 250px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      align-self: flex-start;
+      position: sticky;
+      top: 90px;
+    }
+    
+    .filter-sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .filter-group {
+      margin-bottom: 25px;
+    }
+    
+    .filter-group h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #444;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .checkbox-item input[type="checkbox"] {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    .checkbox-item label {
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .range-slider {
+      width: 100%;
+      margin: 10px 0;
+    }
+    
+    .price-inputs {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .price-inputs input {
+      width: 45%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .filter-btn {
+      background-color: #476c86;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+    
+    .filter-btn:hover {
+      background-color: #476c86;
+    }
+    
+    .reset-btn {
+      background-color: transparent;
+      color: #666;
+      border: 1px solid #ddd;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+    
+    .reset-btn:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .therapists-grid {
+      flex: 3;
+      min-width: 0;
+    }
+    
+    .search-bar {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    
+    .search-bar input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #777;
+    }
+    
+    .sort-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .found-count {
+      font-size: 16px;
+      color: #555;
+    }
+    
+    .sort-dropdown select {
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: white;
+      color: #333;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    .therapist-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    
+    .therapist-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .therapist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    
+    .therapist-photo {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .therapist-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .therapist-availability {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .not-available {
+      background-color: #f44336;
+    }
+    
+    .therapist-details {
+      padding: 20px;
+    }
+    
+    .therapist-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .therapist-title {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    
+    .therapist-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .stars {
+      color: #ffc107;
+      margin-right: 5px;
+    }
+    
+    .review-count {
+      font-size: 14px;
+      color: #777;
+    }
+    
+    .therapist-specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .specialty-tag {
+      background-color: #e6f0ff;
+      color: #476c86;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .therapist-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .therapist-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .book-btn {
+      flex: 1;
+      background-color: #476c86;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .book-btn:hover {
+      background-color: #3b5998;
+    }
+    
+    .profile-btn {
+      flex: 1;
+      background-color: transparent;
+      color: #476c86;
+      border: 1px solid #476c86;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .profile-btn:hover {
+      background-color: #f0f7ff;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 5px;
+    }
+    
+    .pagination-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: white;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .pagination-btn:hover, .pagination-btn.active {
+      background-color: #476c86;
+      color: white;
+      border-color: #476c86;
+    }
+    
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 50px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .footer-column {
+      width: calc(25% - 20px);
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .social-link:hover {
+      background-color:#479c86;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #999;
+    }
+  
+    
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+      
+      .directory-container {
+        flex-direction: column;
+      }
+      
+      .filter-sidebar {
+        width: 100%;
+        position: static;
+        margin-bottom: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+ 
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Speech<span>Empow</span></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="speechTherapy.html">Therapists</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/login" class="login-btn">Log   Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Your Perfect Speech Therapist</h1>
+    <p>Browse our network of certified speech therapy professionals specializing in various areas of communication enhancement.</p>
+  </section>
+
+  <!-- Therapist Directory -->
+  <div class="directory-container">
+    <!-- Filter Sidebar -->
+    <aside class="filter-sidebar">
+      <h2>Filter Therapists</h2>
+      
+      <!-- Specialization Filter -->
+      <div class="filter-group">
+        <h3>Specialization</h3>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="stuttering" name="specialization" value="stuttering">
+            <label for="stuttering">Stuttering & Fluency</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="articulation" name="specialization" value="articulation">
+            <label for="articulation">Articulation</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="voice" name="specialization" value="voice">
+            <label for="voice">Voice Therapy</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="language" name="specialization" value="language">
+            <label for="language">Language Development</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="accent" name="specialization" value="accent">
+            <label for="accent">Accent Modification</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="disorders" name="specialization" value="disorders">
+            <label for="disorders">Communication Disorders</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Experience Filter -->
+      <div class="filter-group">
+        <h3>Experience Level</h3>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="entry" name="experience" value="entry">
+            <label for="entry">1-3 years</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="mid" name="experience" value="mid">
+            <label for="mid">4-7 years</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="senior" name="experience" value="senior">
+            <label for="senior">8+ years</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Language Filter -->
+      <div class="filter-group">
+        <h3>Languages</h3>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="english" name="language" value="english">
+            <label for="english">English</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="spanish" name="language" value="spanish">
+            <label for="spanish">Spanish</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="french" name="language" value="french">
+            <label for="french">French</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="mandarin" name="language" value="mandarin">
+            <label for="mandarin">Mandarin</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="asl" name="language" value="asl">
+            <label for="asl">American Sign Language</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Price Range Filter -->
+      <div class="filter-group">
+        <h3>Price Range (per session)</h3>
+        <input type="range" min="50" max="200" value="125" class="range-slider" id="priceRange">
+        <div class="price-inputs">
+          <input type="number" id="minPrice" placeholder="Min" value="50">
+          <input type="number" id="maxPrice" placeholder="Max" value="200">
+        </div>
+      </div>
+      
+      <!-- Availability Filter -->
+      <div class="filter-group">
+        <h3>Availability</h3>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="weekends" name="availability" value="weekends">
+            <label for="weekends">Weekends</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="evenings" name="availability" value="evenings">
+            <label for="evenings">Evenings (after 5pm)</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="immediately" name="availability" value="immediately">
+            <label for="immediately">Available This Week</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <button class="filter-btn">Apply Filters</button>
+      <button class="reset-btn">Reset All</button>
+    </aside>
+    
+    <!-- Therapists Grid -->
+    <div class="therapists-grid">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search by name, specialty, or keyword...">
+      </div>
+      
+      <!-- Sort Options -->
+      <div class="sort-options">
+        <div class="found-count">24 therapists found</div>
+        <div class="sort-dropdown">
+          <select>
+            <option value="recommended">Recommended</option>
+            <option value="rating-high">Highest Rated</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="experience">Most Experienced</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Therapist Cards -->
+      <div class="therapist-cards">
+        <!-- Therapist 1 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d1.jpg" alt="Dr. Sarah Johnson">
+            <span class="therapist-availability">Available Today</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Dr. Sarah Johnson</h3>
+            <p class="therapist-title">Speech-Language Pathologist, Ph.D.</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(48 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Stuttering</span>
+              <span class="specialty-tag">Voice Therapy</span>
+              <span class="specialty-tag">Accent</span>
+            </div>
+            <p class="therapist-price">$95 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Therapist 2 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d3.jpg" alt="Michael Rodriguez">
+            <span class="therapist-availability">Next Available: Tomorrow</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Michael Rodriguez</h3>
+            <p class="therapist-title">Speech Therapist, M.S. CCC-SLP</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="review-count">(36 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Language Dev</span>
+              <span class="specialty-tag">Articulation</span>
+              <span class="specialty-tag">Bilingual</span>
+            </div>
+            <p class="therapist-price">$85 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Therapist 3 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d2.jpg" alt="Emily Chen">
+            <span class="therapist-availability not-available">Available March 25</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Emily Chen</h3>
+            <p class="therapist-title">Speech Pathologist, M.A.</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(62 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Voice</span>
+              <span class="specialty-tag">Disorders</span>
+              <span class="specialty-tag">Adult Therapy</span>
+            </div>
+            <p class="therapist-price">$110 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Therapist 4 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d4.jpg" alt="Dr. James Wilson">
+            <span class="therapist-availability">Available Today</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Dr. James Wilson</h3>
+            <p class="therapist-title">Speech-Language Pathologist, Ph.D.</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="review-count">(41 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Stuttering</span>
+              <span class="specialty-tag">Fluency</span>
+              <span class="specialty-tag">Research</span>
+            </div>
+            <p class="therapist-price">$125 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Therapist 5 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d2.jpg" alt="Sophia Martinez">
+            <span class="therapist-availability">Next Available: Tomorrow</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Sophia Martinez</h3>
+            <p class="therapist-title">Speech Therapist, M.S. CCC-SLP</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(29 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Pediatric</span>
+              <span class="specialty-tag">Language</span>
+              <span class="specialty-tag">Bilingual</span>
+            </div>
+            <p class="therapist-price">$90 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Therapist 6 -->
+        <div class="therapist-card">
+          <div class="therapist-photo">
+            <img src="images/d3.jpg" alt="Robert Kim">
+            <span class="therapist-availability">Available Today</span>
+          </div>
+          <div class="therapist-details">
+            <h3 class="therapist-name">Robert Kim</h3>
+            <p class="therapist-title">Speech Pathologist, M.A.</p>
+            <div class="therapist-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="review-count">(34 reviews)</span>
+            </div>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Accent</span>
+              <span class="specialty-tag">ESL</span>
+              <span class="specialty-tag">Pronunciation</span>
+            </div>
+            <p class="therapist-price">$80 per session</p>
+            <div class="therapist-actions">
+              <a href="payment.html" class="book-btn">Book Now</a>
+              <a href="#" class="profile-btn">Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#" class="pagination-btn">«</a>
+        <a href="#" class="pagination-btn active">1</a>
+        <a href="#" class="pagination-btn">2</a>
+        <a href="#" class="pagination-btn">3</a>
+        <a href="#" class="pagination-btn">4</a>
+        <a href="#" class="pagination-btn">»</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>SpeechEmpow</h3>
+          <p>Enhancing speech, empowering voices worldwide through accessible therapy.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="speechTherapy.html">Therapists</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="speechTherapy.html">Stuttering Therapy</a></li>
+            <li><a href="speechTherapy.html">Articulation Therapy</a></li>
+            <li><a href="speechTherapy.html">Voice Therapy</a></li>
+            <li><a href="speechTherapy.html">Language Development</a></li>
+            <li><a href="speechTherapy.html">Self-Help Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: info@speechempow.com</li>
+            <li>Phone: (123) 456-7890</li>
+            <li>Hours: Mon-Fri, 9am-5pm EST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; 2025 SpeechEmpow. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Speech Therapy Platform - Filter Implementation
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sample therapist data - in a real application, this would come from a database
+    const therapists = [
+        {
+            id: 1,
+            name: "Dr. Sarah Johnson",
+            title: "Speech-Language Pathologist, Ph.D.",
+            rating: 5,
+            reviewCount: 48,
+            specialties: ["Stuttering", "Voice Therapy", "Accent"],
+            price: 95,
+            availability: "Available Today",
+            availableThisWeek: true,
+            availableWeekends: true,
+            availableEvenings: false,
+            experience: 10, // years
+            languages: ["English", "French"],
+            image: "images/d1.jpg"
+        },
+        {
+            id: 2,
+            name: "Michael Rodriguez",
+            title: "Speech Therapist, M.S. CCC-SLP",
+            rating: 4,
+            reviewCount: 36,
+            specialties: ["Language Development", "Articulation", "Bilingual"],
+            price: 85,
+            availability: "Next Available: Tomorrow",
+            availableThisWeek: true,
+            availableWeekends: false,
+            availableEvenings: true,
+            experience: 6, // years
+            languages: ["English", "Spanish"],
+            image: "images/d3.jpg"
+        },
+        {
+            id: 3,
+            name: "Emily Chen",
+            title: "Speech Pathologist, M.A.",
+            rating: 5,
+            reviewCount: 62,
+            specialties: ["Voice", "Communication Disorders", "Adult Therapy"],
+            price: 110,
+            availability: "Available March 25",
+            availableThisWeek: false,
+            availableWeekends: true,
+            availableEvenings: true,
+            experience: 12, // years
+            languages: ["English", "Mandarin"],
+            image: "images/d2.jpg"
+        },
+        {
+            id: 4,
+            name: "Dr. James Wilson",
+            title: "Speech-Language Pathologist, Ph.D.",
+            rating: 4,
+            reviewCount: 41,
+            specialties: ["Stuttering", "Fluency", "Research"],
+            price: 125,
+            availability: "Available Today",
+            availableThisWeek: true,
+            availableWeekends: false,
+            availableEvenings: false,
+            experience: 15, // years
+            languages: ["English"],
+            image: "images/d4.jpg"
+        },
+        {
+            id: 5,
+            name: "Sophia Martinez",
+            title: "Speech Therapist, M.S. CCC-SLP",
+            rating: 5,
+            reviewCount: 29,
+            specialties: ["Pediatric", "Language Development", "Bilingual"],
+            price: 90,
+            availability: "Next Available: Tomorrow",
+            availableThisWeek: true,
+            availableWeekends: true,
+            availableEvenings: true,
+            experience: 5, // years
+            languages: ["English", "Spanish"],
+            image: "images/d2.jpg"
+        },
+        {
+            id: 6,
+            name: "Robert Kim",
+            title: "Speech Pathologist, M.A.",
+            rating: 4,
+            reviewCount: 34,
+            specialties: ["Accent Modification", "ESL", "Pronunciation"],
+            price: 80,
+            availability: "Available Today",
+            availableThisWeek: true,
+            availableWeekends: false,
+            availableEvenings: true,
+            experience: 7, // years
+            languages: ["English", "Korean"],
+            image: "images/d3.jpg"
+        }
+    ];
+
+    // Initialize UI elements
+    const searchInput = document.querySelector('.search-bar input');
+    const filterBtn = document.querySelector('.filter-btn');
+    const resetBtn = document.querySelector('.reset-btn');
+    const sortDropdown = document.querySelector('.sort-dropdown select');
+    const priceRangeSlider = document.querySelector('#priceRange');
+    const minPriceInput = document.querySelector('#minPrice');
+    const maxPriceInput = document.querySelector('#maxPrice');
+    const foundCountElement = document.querySelector('.found-count');
+    const therapistCardsContainer = document.querySelector('.therapist-cards');
+
+    // Selected filters state
+    let filters = {
+        specializations: [],
+        experience: [],
+        languages: [],
+        minPrice: 50,
+        maxPrice: 200,
+        availability: [],
+        searchTerm: ''
+    };
+
+    let sortOption = 'recommended';
+    let currentTherapists = [...therapists];
+
+    // Set up event listeners
+    searchInput.addEventListener('input', function() {
+        filters.searchTerm = this.value.toLowerCase().trim();
+        applyFilters();
+    });
+
+    filterBtn.addEventListener('click', function() {
+        collectFilters();
+        applyFilters();
+    });
+
+    resetBtn.addEventListener('click', function() {
+        resetFilters();
+    });
+
+    sortDropdown.addEventListener('change', function() {
+        sortOption = this.value;
+        applyFilters();
+    });
+
+    // Sync price range slider with input fields
+    priceRangeSlider.addEventListener('input', function() {
+        minPriceInput.value = this.value;
+        maxPriceInput.value = 200;
+        filters.minPrice = parseInt(this.value);
+        filters.maxPrice = 200;
+    });
+
+    minPriceInput.addEventListener('input', function() {
+        if (parseInt(this.value) <= parseInt(maxPriceInput.value)) {
+            priceRangeSlider.value = this.value;
+            filters.minPrice = parseInt(this.value) || 50;
+        }
+    });
+
+    maxPriceInput.addEventListener('input', function() {
+        if (parseInt(this.value) >= parseInt(minPriceInput.value)) {
+            filters.maxPrice = parseInt(this.value) || 200;
+        }
+    });
+
+    // Collect filter values from UI
+    function collectFilters() {
+        // Collect specializations
+        filters.specializations = Array.from(document.querySelectorAll('input[name="specialization"]:checked'))
+            .map(el => el.value);
+        
+        // Collect experience levels
+        filters.experience = Array.from(document.querySelectorAll('input[name="experience"]:checked'))
+            .map(el => el.value);
+        
+        // Collect languages
+        filters.languages = Array.from(document.querySelectorAll('input[name="language"]:checked'))
+            .map(el => el.value);
+        
+        // Collect price range
+        filters.minPrice = parseInt(minPriceInput.value) || 50;
+        filters.maxPrice = parseInt(maxPriceInput.value) || 200;
+        
+        // Collect availability
+        filters.availability = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
+            .map(el => el.value);
+    }
+
+    // Reset all filters
+    function resetFilters() {
+        // Clear checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        
+        // Reset price range
+        priceRangeSlider.value = 125;
+        minPriceInput.value = 50;
+        maxPriceInput.value = 200;
+        
+        // Reset search
+        searchInput.value = '';
+        
+        // Reset sort
+        sortDropdown.value = 'recommended';
+        sortOption = 'recommended';
+        
+        // Reset filters object
+        filters = {
+            specializations: [],
+            experience: [],
+            languages: [],
+            minPrice: 50,
+            maxPrice: 200,
+            availability: [],
+            searchTerm: ''
+        };
+        
+        // Apply reset filters
+        applyFilters();
+    }
+
+    // Filter therapists based on selected criteria
+    function applyFilters() {
+        let filteredTherapists = [...therapists];
+        
+        // Apply search term filter
+        if (filters.searchTerm) {
+            filteredTherapists = filteredTherapists.filter(therapist => {
+                const searchableText = `${therapist.name} ${therapist.title} ${therapist.specialties.join(' ')}`.toLowerCase();
+                return searchableText.includes(filters.searchTerm);
+            });
+        }
+        
+        // Apply specialization filter
+        if (filters.specializations.length > 0) {
+            filteredTherapists = filteredTherapists.filter(therapist => {
+                return filters.specializations.some(specialization => {
+                    // Match specialization with therapist's specialties
+                    const specialty = specialization.toLowerCase();
+                    return therapist.specialties.some(s => s.toLowerCase().includes(specialty));
+                });
+            });
+        }
+        
+        // Apply experience filter
+        if (filters.experience.length > 0) {
+            filteredTherapists = filteredTherapists.filter(therapist => {
+                return filters.experience.some(exp => {
+                    if (exp === 'entry' && therapist.experience >= 1 && therapist.experience <= 3) return true;
+                    if (exp === 'mid' && therapist.experience >= 4 && therapist.experience <= 7) return true;
+                    if (exp === 'senior' && therapist.experience >= 8) return true;
+                    return false;
+                });
+            });
+        }
+        
+        // Apply language filter
+        if (filters.languages.length > 0) {
+            filteredTherapists = filteredTherapists.filter(therapist => {
+                return filters.languages.some(lang => {
+                    return therapist.languages.some(l => l.toLowerCase() === lang.toLowerCase());
+                });
+            });
+        }
+        
+        // Apply price range filter
+        filteredTherapists = filteredTherapists.filter(therapist => {
+            return therapist.price >= filters.minPrice && therapist.price <= filters.maxPrice;
+        });
+        
+        // Apply availability filter
+        if (filters.availability.length > 0) {
+            filteredTherapists = filteredTherapists.filter(therapist => {
+                return filters.availability.some(avail => {
+                    if (avail === 'weekends' && therapist.availableWeekends) return true;
+                    if (avail === 'evenings' && therapist.availableEvenings) return true;
+                    if (avail === 'immediately' && therapist.availableThisWeek) return true;
+                    return false;
+                });
+            });
+        }
+        
+        // Apply sorting
+        switch (sortOption) {
+            case 'rating-high':
+                filteredTherapists.sort((a, b) => b.rating - a.rating);
+                break;
+            case 'price-low':
+                filteredTherapists.sort((a, b) => a.price - b.price);
+                break;
+            case 'price-high':
+                filteredTherapists.sort((a, b) => b.price - a.price);
+                break;
+            case 'experience':
+                filteredTherapists.sort((a, b) => b.experience - a.experience);
+                break;
+            case 'recommended':
+            default:
+                // For recommended, use a combination of rating and review count
+                filteredTherapists.sort((a, b) => {
+                    const scoreA = a.rating * 0.7 + (Math.min(a.reviewCount, 50) / 50) * 0.3;
+                    const scoreB = b.rating * 0.7 + (Math.min(b.reviewCount, 50) / 50) * 0.3;
+                    return scoreB - scoreA;
+                });
+                break;
+        }
+        
+        // Update current therapists
+        currentTherapists = filteredTherapists;
+        
+        // Update UI
+        updateTherapistCards();
+        updateFoundCount();
+    }
+
+    // Update the therapist cards in the UI
+    function updateTherapistCards() {
+        therapistCardsContainer.innerHTML = '';
+        
+        if (currentTherapists.length === 0) {
+            therapistCardsContainer.innerHTML = `
+                <div class="no-results">
+                    <h3>No therapists found</h3>
+                    <p>Try adjusting your filters to see more results.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        currentTherapists.forEach(therapist => {
+            const availabilityClass = therapist.availableThisWeek ? '' : 'not-available';
+            
+            const therapistCard = document.createElement('div');
+            therapistCard.className = 'therapist-card';
+            therapistCard.innerHTML = `
+                <div class="therapist-photo">
+                    <img src="${therapist.image}" alt="${therapist.name}">
+                    <span class="therapist-availability ${availabilityClass}">${therapist.availability}</span>
+                </div>
+                <div class="therapist-details">
+                    <h3 class="therapist-name">${therapist.name}</h3>
+                    <p class="therapist-title">${therapist.title}</p>
+                    <div class="therapist-rating">
+                        <span class="stars">${'★'.repeat(therapist.rating)}${'☆'.repeat(5-therapist.rating)}</span>
+                        <span class="review-count">(${therapist.reviewCount} reviews)</span>
+                    </div>
+                    <div class="therapist-specialties">
+                        ${therapist.specialties.map(specialty => 
+                            `<span class="specialty-tag">${specialty}</span>`
+                        ).join('')}
+                    </div>
+                    <p class="therapist-price">$${therapist.price} per session</p>
+                    <div class="therapist-actions">
+                        <a href="payment.html" class="book-btn">Book Now</a>
+                        <a href="#" class="profile-btn">Profile</a>
+                    </div>
+                </div>
+            `;
+            
+            therapistCardsContainer.appendChild(therapistCard);
+        });
+    }
+
+    // Update the count of found therapists
+    function updateFoundCount() {
+        foundCountElement.textContent = `${currentTherapists.length} therapists found`;
+    }
+
+    // Initialize the page
+    updateTherapistCards();
+    updateFoundCount();
+});
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Therapy Platform Mockup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #6b5353;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #c4e3d8 0%, #4a7b6b 100%);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3c977f;
+    }
+
+
+        .logo span {
+            color: #03040b;
+        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #faf7f7;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #479c86;
+    }
+
+    .login-btn {
+      background-color: #479c86;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #479c86;
+    }
+
+    /* Page Banner */
+    .page-banner {
+      background-image:url(images/ba.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgb(241, 246, 245);
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .page-banner h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    
+    /* About Section Styles */
+    .about-section {
+      padding: 80px 0;
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    
+    .about-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+    
+    .about-text h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4aa590;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+    
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .about-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* Mission & Vision Section */
+    .mission-vision {
+      background-color: #f5f7fa;
+      padding: 80px 0;
+    }
+    
+    .mission-vision-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .mission-box, .vision-box {
+      flex: 1;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 0 15px;
+    }
+    
+    .mission-box h3, .vision-box h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #4aa590;
+      text-align: center;
+    }
+    
+    .mission-box p, .vision-box p {
+      font-size: 16px;
+      color: #555;
+    }
+    
+    /* Team Section */
+    .team-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .team-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #4aa590;
+    }
+    
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .team-member {
+      width: calc(33.333% - 30px);
+      background-color: #f5f7fa;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member-image {
+      height: 250px;
+      background-color: #ddd;
+      overflow: hidden;
+    }
+    
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .member-info {
+      padding: 20px;
+    }
+    
+    .member-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .member-info p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background-color: #f5f7fa;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .testimonials h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #4aa590;
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px;
+    }
+    
+    .testimonial-text {
+      font-size: 18px;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .testimonial-text:before {
+      content: '"';
+      font-size: 60px;
+      color: #4aa590;
+      opacity: 0.2;
+      position: absolute;
+      top: -20px;
+      left: -15px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .author-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .author-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .author-info p {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    
+    .footer-column {
+      width: calc(25% - 20px);
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+      color: #fff;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .social-link:hover {
+      background-color: #4a6fa5;
+    }
+    
+    .copyright {
+      font-size: 14px;
+      color: #999;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Mobile menu would go here */
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+      
+      .mission-vision-content {
+        flex-direction: column;
+      }
+      
+      .mission-box, .vision-box {
+        margin: 15px 0;
+      }
+      
+      .team-member {
+        width: calc(50% - 15px);
+      }
+      
+      .footer-content {
+        flex-wrap: wrap;
+      }
+      
+      .footer-column {
+        width: calc(50% - 20px);
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .team-member {
+        width: 100%;
+      }
+      
+      .footer-column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Speech<span>Empow</span></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="speechTherapy.html">Therapists</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/login" class="login-btn">Log   Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>Learn more about our mission and commitment to speech therapy excellence</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>SpeechEmpow was founded in 2020 by a team of certified speech-language pathologists who recognized the need for more accessible speech therapy services. Our founders experienced firsthand the challenges many individuals face when seeking quality speech therapy - from long wait times to geographical limitations and high costs.</p>
+          <p>With a commitment to breaking down these barriers, we created an innovative platform that connects clients with qualified speech therapists through secure online sessions. Our goal is to make speech therapy accessible to everyone, regardless of location or circumstances.</p>
+          <p>Since our launch, we've helped thousands of individuals improve their communication skills and gain confidence in their speech. We continue to expand our services and refine our approach based on client feedback and the latest research in speech therapy.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/team.webp" alt="SpeechEmpow Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="mission-vision-content">
+        <div class="mission-box">
+          <h3>Our Mission</h3>
+          <p>At SpeechEmpow, our mission is to transform lives through accessible, high-quality speech therapy. We strive to empower individuals of all ages to overcome speech and communication challenges by providing personalized therapy solutions, innovative tools, and unwavering support.</p>
+          <p>We believe that everyone deserves the opportunity to express themselves clearly and confidently. By removing barriers to speech therapy services, we aim to help our clients achieve their communication goals and enhance their quality of life.</p>
+        </div>
+        <div class="vision-box">
+          <h3>Our Vision</h3>
+          <p>We envision a world where speech therapy is readily available to anyone who needs it, regardless of geographical location or financial constraints. Our vision is to be the leading online platform for speech therapy services, known for excellence, innovation, and client-centered care.</p>
+          <p>We aspire to continuously expand our reach, develop cutting-edge tools, and foster a community where individuals can support each other on their speech improvement journeys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Leadership Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/d1.jpg" alt="Dr. Sarah Johnson">
+          </div>
+          <div class="member-info">
+            <h3>Dr. Sarah Johnson</h3>
+            <p>Co-Founder & Clinical Director</p>
+            <p>Dr. Johnson has over 15 years of experience in speech-language pathology, specializing in stuttering therapy and voice disorders.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/d2.jpg" alt="Michael Chen">
+          </div>
+          <div class="member-info">
+            <h3>Michael Chen</h3>
+            <p>Co-Founder & Technology Director</p>
+            <p>With a background in both speech therapy and software development, Michael leads our platform's technological innovations.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/d4.jpg" alt="Dr. Emily Rodriguez">
+          </div>
+          <div class="member-info">
+            <h3>Dr. Emily Rodriguez</h3>
+            <p>Head of Therapist Training</p>
+            <p>Dr. Rodriguez ensures all therapists on our platform meet our high standards for quality care and evidence-based practices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            <p>After struggling with stuttering for years, I found SpeechEmpow and it changed my life. The convenience of online sessions and my therapist's expertise have helped me make incredible progress. I'm now confident speaking in public and at work.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="images/c1.jpg" alt="Alex Thompson">
+            </div>
+            <div class="author-info">
+              <h4>Alex Thompson</h4>
+              <p>Client since 2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>SpeechEmpow</h3>
+          <p>Enhancing speech, empowering voices worldwide through accessible therapy.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="speechTherapy.html">Therapists</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="speechTherapy.html">Stuttering Therapy</a></li>
+            <li><a href="speechTherapy.html">Articulation Therapy</a></li>
+            <li><a href="speechTherapy.html">Voice Therapy</a></li>
+            <li><a href="speechTherapy.html">Language Development</a></li>
+            <li><a href="speechTherapy.html">Self-Help Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: info@speechempow.com</li>
+            <li>Phone: (123) 456-7890</li>
+            <li>Hours: Mon-Fri, 9am-5pm EST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; 2025 SpeechEmpow. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

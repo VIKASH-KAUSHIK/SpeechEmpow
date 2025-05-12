@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .qr-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .qr-img {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #ddd;
+        }
+        
+        .card-icons {
+            display: flex;
+            
+            
+            gap: 10px;
+            /* margin-bottom: 15px; */
+        }
+
+        .card-icon {
+            width: 120px;
+            height: 70px;
+            background-color: #fdfdfd;
+            border: radius 10px;;
+            border-radius: 18px;
+            border-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left:2px ;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        
+        .info {
+            margin-top: 1.5rem;
+            max-width: 400px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .qr-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="no-print">
+        <h1>SpeechTherapy Payment</h1>
+        <div id="payment-form-container">
+            <div class="payment-form">   <div class="card-icons">
+                    <a href="payment.html"><button class="card-icon ">     <svg width="150" height="70">
+       <image href="/images/credit-card-color-icon.png" width="120" height="70" x="0" y="0" />
+     </svg></button></a>
+                    <a href="Qr.html"><button class="card-icon">     <svg width="100" height="150">
+       <image href="/images/upi-icon.png" width="100" height="150" x="0" y="0" />
+     </svg></button></a>
+                    <a href="home.html"><button class="card-icon">     <svg width="110" height="50">
+       <image href="/images/home.png" width="110" height="50" x="0" y="0" />
+     </svg></button></a>
+                </div>
+    </header>
+    
+    <main>
+        <div class="qr-container">
+            <img src="qrcode.png" alt="QR Code" class="qr-img">
+            <div class="info">
+                <h2>Scan Me</h2>
+                <p>Point your device's camera at the QR code to access the linked content.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="no-print">
+        <p>© 2025 QR Code Generator</p>
+    </footer>
+
+    <script>
+        // In a real implementation, you would replace the placeholder with a 
+        // proper QR code library like qrcode.js or use a pre-generated QR code image
+        console.log("QR Code page loaded");
+    </script>
+</body>
+</html>
